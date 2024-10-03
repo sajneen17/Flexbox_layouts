@@ -1,35 +1,38 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, // This line removes the debug banner
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Flexbox Layout'),
+          title: const Text('Flexbox Layout'),
           centerTitle: true,
           backgroundColor: Colors.deepPurple,
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            // You can add a custom action here
-            print('Floating Action Button Pressed');
+
           },
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
           backgroundColor: Colors.deepPurpleAccent,
         ),
-        body: FlexboxLayoutExample(),
+        body: const FlexboxLayoutExample(),
       ),
     );
   }
 }
 
 class FlexboxLayoutExample extends StatelessWidget {
+  const FlexboxLayoutExample({super.key}); // Converted 'key' to super parameter
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -42,12 +45,12 @@ class FlexboxLayoutExample extends StatelessWidget {
               Expanded(
                 child: InkWell(
                   onTap: () {
-                    print('Red Box Clicked');
+
                   },
                   child: Container(
                     height: 120,
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         colors: [Colors.red, Colors.pink],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -64,7 +67,7 @@ class FlexboxLayoutExample extends StatelessWidget {
                     ),
                     child: Stack(
                       alignment: Alignment.center,
-                      children: [
+                      children: const [
                         Icon(
                           Icons.favorite,
                           color: Colors.white,
@@ -86,16 +89,16 @@ class FlexboxLayoutExample extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Expanded(
                 child: InkWell(
                   onTap: () {
-                    print('Green Box Clicked');
+
                   },
                   child: Container(
                     height: 120,
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         colors: [Colors.green, Colors.lightGreen],
                         begin: Alignment.topRight,
                         end: Alignment.bottomLeft,
@@ -112,7 +115,7 @@ class FlexboxLayoutExample extends StatelessWidget {
                     ),
                     child: Stack(
                       alignment: Alignment.center,
-                      children: [
+                      children: const [
                         Icon(
                           Icons.star,
                           color: Colors.white,
@@ -134,16 +137,16 @@ class FlexboxLayoutExample extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Expanded(
                 child: InkWell(
                   onTap: () {
-                    print('Blue Box Clicked');
+
                   },
                   child: Container(
                     height: 120,
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         colors: [Colors.blue, Colors.lightBlueAccent],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -160,7 +163,7 @@ class FlexboxLayoutExample extends StatelessWidget {
                     ),
                     child: Stack(
                       alignment: Alignment.center,
-                      children: [
+                      children: const [
                         Icon(
                           Icons.thumb_up,
                           color: Colors.white,
@@ -184,7 +187,7 @@ class FlexboxLayoutExample extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           // Row with Flexible widgets having custom animation (scale effect)
           Row(
@@ -192,21 +195,21 @@ class FlexboxLayoutExample extends StatelessWidget {
               Flexible(
                 flex: 2,
                 child: AnimatedContainer(
-                  duration: Duration(seconds: 1),
+                  duration: const Duration(seconds: 1),
                   curve: Curves.easeInOut,
                   height: 100,
                   decoration: BoxDecoration(
                     color: Colors.orange,
                     borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
+                        color: Colors.black38,
                         spreadRadius: 2,
                         blurRadius: 5,
                       ),
                     ],
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Flex 2',
                       style: TextStyle(
@@ -218,25 +221,25 @@ class FlexboxLayoutExample extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Flexible(
                 flex: 1,
                 child: AnimatedContainer(
-                  duration: Duration(seconds: 1),
+                  duration: const Duration(seconds: 1),
                   curve: Curves.easeInOut,
                   height: 100,
                   decoration: BoxDecoration(
                     color: Colors.purple,
                     borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
+                        color: Colors.black38,
                         spreadRadius: 2,
                         blurRadius: 5,
                       ),
                     ],
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Flex 1',
                       style: TextStyle(
@@ -250,7 +253,7 @@ class FlexboxLayoutExample extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           // Expanded within Column with customized styling and border
           Expanded(
@@ -265,15 +268,15 @@ class FlexboxLayoutExample extends StatelessWidget {
                       bottom: BorderSide(width: 4, color: Colors.black),
                     ),
                     borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
+                        color: Colors.black38,
                         spreadRadius: 2,
                         blurRadius: 5,
                       ),
                     ],
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Fixed height with custom border',
                       style: TextStyle(
@@ -284,25 +287,25 @@ class FlexboxLayoutExample extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Expanded(
                   child: Container(
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         colors: [Colors.cyan, Colors.teal],
                         begin: Alignment.topRight,
                         end: Alignment.bottomLeft,
                       ),
                       borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.3),
+                          color: Colors.black38,
                           spreadRadius: 2,
                           blurRadius: 5,
                         ),
                       ],
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Expanded Column Item',
                         style: TextStyle(
